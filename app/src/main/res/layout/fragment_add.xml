@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.add.addFragment">
+
+    <EditText
+        android:id="@+id/CARD_FRONT_EDIT_TEXT"
+        android:layout_width="411dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/CARD_FRONT_PROMPT"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage|textMultiLine"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFD3D3D3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/CARD_BACK_EDIT_TEXT"
+        android:layout_width="409dp"
+        android:layout_height="207dp"
+        android:layout_marginTop="94dp"
+        android:ems="10"
+        android:hint="@string/CARD_BACK_PROMPT"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage|none|textMultiLine"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFD3D3D3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CARD_FRONT_EDIT_TEXT" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:text="@string/ADD_CARD_TEXT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CARD_BACK_EDIT_TEXT" />
+</androidx.constraintlayout.widget.ConstraintLayout>

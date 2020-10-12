@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A237E"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editFlashcardFrontText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="445dp"
+        android:hint="@string/CARD_FRONT_PROMPT"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A6A6A6"
+        app:layout_constraintBottom_toTopOf="@+id/homeFlashcardBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <EditText
+        android:id="@+id/editFlashcardBackText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/CARD_BACK_PROMPT"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A6A6A6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFlashcardFrontText"></EditText>
+
+    <Button
+        android:id="@+id/clearbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="#B71C1C"
+        android:text="@string/CLEAR"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/savebutton"
+        app:layout_constraintTop_toBottomOf="@+id/editFlashcardBackText" />
+
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="16dp"
+        android:background="#1B5E20"
+        android:text="@string/SAVE"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/clearbutton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFlashcardBackText" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeFlashcardFront"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:clickable="false"
+        app:cardBackgroundColor="#880E4F"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fronttext"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|top"
+                android:text="@string/FRONT_HEADER"
+                android:textColor="@color/design_default_color_background"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/CARD_FRONT"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:gravity="bottom|center"
+                android:text="@string/HOMEPAGE_CARD_FRONT_PREVIEW_TEXT" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeFlashcardBack"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="41dp"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFlashcardFrontText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/backtext"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|top"
+                android:text="@string/BACK_HEADER"
+                android:textColor="@color/design_default_color_background"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/CARD_BACK"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:gravity="bottom|center"
+                android:text="@string/HOMEPAGE_CARD_BACK_PREVIEW_TEXT"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/myFlashcardListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="launchSecondActivity"
+        android:contentDescription="@string/myFlashcardListButton"
+        app:layout_constraintBottom_toTopOf="@+id/homeFlashcardFront"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_bookmarks_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
