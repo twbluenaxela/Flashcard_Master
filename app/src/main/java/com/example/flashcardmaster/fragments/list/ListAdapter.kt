@@ -13,8 +13,8 @@ import kotlinx.android.synthetic.main.card_front.view.flashcardconstraintlayout
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
-    private var flashcardList = emptyList<flashcard>()
-    private val selected_position = -1
+    var flashcardList = emptyList<flashcard>()
+//    var hasFlashcardBeenSelected = false
 
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -34,21 +34,8 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var hasBackTextBeenDisplayed = false;
 
-        //makes it selectable
-        holder.itemView.flashcardconstraintlayout.setOnLongClickListener{
-            if(hasBackTextBeenDisplayed){holder.itemView.CARD_FRONT.setCardBackgroundColor(Color.parseColor("#808080"))
-                hasBackTextBeenDisplayed = false
-            }else {
-                holder.itemView.CARD_BACK.setCardBackgroundColor(Color.parseColor("#808080"))
-                hasBackTextBeenDisplayed = true
-            }
-            true
-
-        }
-
 
         val currentItem = flashcardList[position]
-        //used to flip between the values on the card
 
         //displays the cards
         holder.itemView.flashcard_text_front.text = currentItem.flashcardFrontText
@@ -71,13 +58,15 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     }
 
-//    fun toggleItems(){
-//        for(item: flashcard in flashcardList)
+//    fun deleteFlashcard(position: Int){
+//        this.deleteFlashcard(flashcardList[position])
 //    }
+//
 
     fun setData(flashcard: List<flashcard>){
         this.flashcardList = flashcard
         notifyDataSetChanged()
     }
+
 
 }

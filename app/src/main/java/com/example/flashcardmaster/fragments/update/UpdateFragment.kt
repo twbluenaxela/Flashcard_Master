@@ -10,6 +10,7 @@ import com.example.flashcardmaster.R
 
 class UpdateFragment : Fragment() {
 
+    private val args by navArgs<UpdateFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

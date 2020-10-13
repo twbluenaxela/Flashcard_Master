@@ -2,8 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentlistconstraintlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:clipToPadding="true"
+    android:paddingTop="?attr/actionBarSize"
+    android:scrollIndicators="right"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".fragments.list.listFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,11 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
+        app:elevation="@dimen/text_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_add" />
